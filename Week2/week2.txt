@@ -1,0 +1,34 @@
+create table stud60
+(
+	id numeric primary key,	
+	name varchar not null
+);
+create table stud_detais60
+(
+	foregin key id reference stud(id)
+	mobile_no numeric(10) notnull,
+	city varchar
+);	
+insert into stud60
+ values(1,"om"),(2,"sai"),(3,"ram"),(4,"kanha"),(5,"radha"),(6,"miraa"),(7,"ishu"),(8,"seeta"),(9,"nishu"),(10,"dishu");
+insert into stud_details60
+ values(1,2345645,"surat"),(2,245577,"bardoli"),(3,345676,"bardoli"),(4,45678,"bharuch"),(5,578599,"mumbai"),(6,546576,"surat"),(7,34567,"bardoli"),(8,46788,"madras"),(9,869808,"madras"),(10,46889,"surat");
+
+1. Display student table record.
+-->select * from stud60;
+
+2.Display student detais table record.
+-->select * from stud_detail60;
+
+3.Display whose student come from the surat city.
+-->select id,name,mobile_no from stud_detais60   
+   where city="surat";
+
+4.Display student details whose city name start with 'b'.
+-->select id,city,mobile_no from student_details60
+   where city like 'b_%';
+
+5.Update moblie_no who are comming from 'surat'.
+--> update stud_details60
+    set mobile_no.=243567
+    where city='surat';   
